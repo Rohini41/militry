@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Military Assistant AI</title>
+<style>
+:root{--bg:#090d0a;--panel:#121912;--soft:#171f17;--line:rgba(220,235,210,.11);--text:#f2f5ef;--muted:#99a493;--accent:#b5cf70;--accent2:#dceda0;--user:#202b20}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;color:var(--text);font-family:Inter,system-ui,sans-serif;background:radial-gradient(circle at 85% 10%,rgba(181,207,112,.14),transparent 30%),#090d0a;overflow:hidden}
+.app{width:min(1150px,94vw);height:min(92vh,830px);margin:4vh auto;display:grid;grid-template-columns:300px 1fr;overflow:hidden;border:1px solid var(--line);border-radius:30px;background:rgba(18,25,18,.93);box-shadow:0 35px 110px rgba(0,0,0,.52);backdrop-filter:blur(20px)}
+aside{position:relative;padding:30px 25px;border-right:1px solid var(--line);background:linear-gradient(180deg,rgba(181,207,112,.09),rgba(8,12,9,.65))}
+.brand{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:850;letter-spacing:.5px}.logo{width:45px;height:45px;display:grid;place-items:center;border-radius:15px;color:#10150e;background:linear-gradient(135deg,var(--accent),var(--accent2));font-size:19px;font-weight:950;box-shadow:0 12px 35px rgba(181,207,112,.2)}
+.tag{margin:42px 0 12px;color:var(--accent2);font-size:10px;font-weight:850;letter-spacing:2.2px;text-transform:uppercase}h1{margin:0;font-size:34px;line-height:.98;letter-spacing:-2px}.intro{margin:17px 0 28px;color:var(--muted);font-size:13px;line-height:1.75}.topics{display:grid;gap:9px}.topic{padding:12px;border:1px solid var(--line);border-radius:13px;color:#ced8c9;background:rgba(255,255,255,.025);font-size:12px}.status{position:absolute;left:25px;right:25px;bottom:25px;display:flex;align-items:center;gap:8px;color:var(--muted);font-size:11px}.dot{width:7px;height:7px;border-radius:50%;background:#73e49a;box-shadow:0 0 15px #73e49a}
+main{min-width:0;display:grid;grid-template-rows:auto 1fr auto}header{padding:22px 28px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.header-title{font-size:14px;font-weight:780}.header-subtitle{margin-top:3px;color:var(--muted);font-size:11px}.badge{padding:7px 10px;border:1px solid rgba(181,207,112,.25);border-radius:999px;color:var(--accent2);background:rgba(181,207,112,.07);font-size:10px;font-weight:850}
+#chat{padding:28px;overflow-y:auto;scroll-behavior:smooth}.message{display:flex;gap:11px;margin-bottom:20px;animation:appear .22s ease-out}@keyframes appear{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}.avatar{flex:0 0 35px;width:35px;height:35px;display:grid;place-items:center;border:1px solid var(--line);border-radius:11px;background:#1b241c;color:#d6dfd1;font-size:11px;font-weight:850}.bot .avatar{border:0;color:#10150e;background:linear-gradient(135deg,var(--accent),var(--accent2))}.bubble{max-width:min(750px,87%);padding:13px 15px;border:1px solid var(--line);border-radius:16px;background:var(--soft);color:#e0e7dc;font-size:13px;line-height:1.68;white-space:pre-wrap}.user{justify-content:flex-end}.user .bubble{order:-1;background:var(--user)}
+.composer{padding:18px 22px 22px;border-top:1px solid var(--line);background:rgba(10,13,11,.76)}form{display:flex;gap:10px;padding:8px;border:1px solid var(--line);border-radius:18px;background:#111811}textarea{flex:1;min-height:42px;max-height:120px;resize:none;padding:11px 10px;border:0;outline:0;color:var(--text);background:transparent;font:inherit;font-size:13px}textarea::placeholder{color:#687467}button{width:47px;border:0;border-radius:12px;color:#10150e;background:linear-gradient(135deg,var(--accent),var(--accent2));cursor:pointer;font-size:17px;transition:.15s}button:hover{transform:translateY(-1px);filter:brightness(1.08)}button:disabled{opacity:.5;cursor:not-allowed;transform:none}.hint{margin-top:9px;text-align:center;color:#667163;font-size:10px}.typing{color:var(--muted)}
+@media(max-width:760px){body{overflow:auto}.app{width:100%;height:100vh;margin:0;border-radius:0;grid-template-columns:1fr}aside{display:none}header{padding:18px 16px}#chat{padding:20px 16px}.composer{padding:14px 12px}.badge{display:none}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside>
+<div class="brand"><div class="logo">✦</div><span>MILITARY ASSISTANT AI</span></div>
+<div class="tag">Defense studies</div>
+<h1>Study the<br>strategy.</h1>
+<p class="intro">A dedicated educational assistant for learning about military history, defense studies, strategy, security, logistics, leadership, and related academic subjects.</p>
+<div class="topics">
+<div class="topic">◈ Military history & campaigns</div>
+<div class="topic">◈ Strategy & defense studies</div>
+<div class="topic">◈ Military technology concepts</div>
+<div class="topic">◈ Security & peace studies</div>
+</div>
+<div class="status"><span class="dot"></span>Gemini learning engine online</div>
+</aside>
+<main>
+<header><div><div class="header-title">Military Study Assistant</div><div class="header-subtitle">Ask academic questions about military and defense studies</div></div><div class="badge">GEMINI 3.1 FLASH-LITE</div></header>
+<section id="chat">
+<div class="message bot"><div class="avatar">✦</div><div class="bubble">Hi! I'm Military Assistant AI. I can help you study military history, defense studies, strategy, security, military technology concepts, logistics, and related academic subjects.</div></div>
+</section>
+<div class="composer">
+<form id="chatForm"><textarea id="message" rows="1" placeholder="Ask a military-study question..." autocomplete="off"></textarea><button id="sendBtn" type="submit" aria-label="Send">➤</button></form>
+<div class="hint">Military Assistant AI answers only within its defined educational scope.</div>
+</div>
+</main>
+</div>
+<script>
+const form=document.getElementById("chatForm"),input=document.getElementById("message"),chat=document.getElementById("chat"),sendBtn=document.getElementById("sendBtn");
+function addMessage(text,type){const w=document.createElement("div");w.className=`message ${type}`;const a=document.createElement("div");a.className="avatar";a.textContent=type==="bot"?"✦":"YOU";const b=document.createElement("div");b.className="bubble";b.textContent=text;w.append(a,b);chat.appendChild(w);chat.scrollTop=chat.scrollHeight}
+function addTyping(){const w=document.createElement("div");w.className="message bot";w.id="typing";const a=document.createElement("div");a.className="avatar";a.textContent="✦";const b=document.createElement("div");b.className="bubble typing";b.textContent="Thinking...";w.append(a,b);chat.appendChild(w);chat.scrollTop=chat.scrollHeight}
+form.addEventListener("submit",async e=>{e.preventDefault();const message=input.value.trim();if(!message)return;addMessage(message,"user");input.value="";input.style.height="auto";sendBtn.disabled=true;addTyping();try{const r=await fetch("/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message})});const d=await r.json();document.getElementById("typing")?.remove();addMessage(r.ok?d.answer:(d.error||"Something went wrong."),"bot")}catch{document.getElementById("typing")?.remove();addMessage("Unable to reach the server. Please try again.","bot")}finally{sendBtn.disabled=false;input.focus()}});
+input.addEventListener("input",()=>{input.style.height="auto";input.style.height=Math.min(input.scrollHeight,120)+"px"});input.addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();form.requestSubmit()}});
+</script>
+</body>
+</html>
